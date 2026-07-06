@@ -1,0 +1,16 @@
+{
+  "name": "Ana Luiza Rigueira | Âmagus Lapidar",
+  "short_name": "Âmagus",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F4EE",
+  "theme_color": "#2E2824",
+  "icons": [
+    {
+      "src": "/amagus-favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
