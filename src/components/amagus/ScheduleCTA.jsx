@@ -18,7 +18,7 @@ export default function ScheduleCTA({ onRecanto, recantoAnswers }) {
   };
 
   return (
-    <section id="contato" className="amagus-pattern-dark relative flex min-h-[60vh] items-center py-16 lg:py-24">
+    <section id="contato" className="amagus-pattern-dark relative flex min-h-[56vh] items-center py-14 lg:py-20">
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.06]">
         <div className="h-[360px] w-[360px] rotate-45 border border-background/40" />
       </div>
@@ -32,14 +32,19 @@ export default function ScheduleCTA({ onRecanto, recantoAnswers }) {
 
         <SectionReveal delay={0.1}>
           <h2 className="font-display text-4xl leading-tight text-background sm:text-5xl lg:text-6xl">
-            Vamos conversar?
+            Você não precisa atravessar esse momento sozinha.
           </h2>
         </SectionReveal>
 
         <SectionReveal delay={0.2}>
-          <p className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-background/60 sm:text-xl">
-            O primeiro passo pode ser hoje. Escreva para a Ana Luiza pelo WhatsApp — um espaço de escuta, sem pressa e sem julgamentos.
-          </p>
+          <div className="mx-auto mt-7 max-w-2xl space-y-5 text-lg leading-relaxed text-background/60 sm:text-xl">
+            <p>
+              Se este site fez sentido para você, talvez seja porque alguma parte da sua história também esteja pedindo espaço para ser escutada.
+            </p>
+            <p>
+              Quando estiver pronta, será um prazer caminhar ao seu lado.
+            </p>
+          </div>
         </SectionReveal>
 
         <SectionReveal delay={0.35}>
@@ -49,7 +54,7 @@ export default function ScheduleCTA({ onRecanto, recantoAnswers }) {
               className="group inline-flex items-center justify-center gap-3 bg-primary px-8 py-4 text-sm tracking-wide text-foreground transition-all duration-300 hover:bg-primary/90"
             >
               <MessageCircle className="h-4 w-4" />
-              Conversar no WhatsApp
+              Conversar com a Ana pelo WhatsApp
             </button>
             <button
               onClick={onRecanto}

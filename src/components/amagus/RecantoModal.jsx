@@ -9,13 +9,11 @@ const STEPS = [
     key: 'tema',
     question: 'Qual tema mais te trouxe até aqui?',
     options: [
-      'Relacionamento',
+      'Relações',
+      'Trauma',
+      'Luto',
       'Autoestima',
       'Ansiedade',
-      'Luto ou separação',
-      'Trauma',
-      'Libido feminina',
-      'Família',
       'Ainda não sei explicar',
     ],
   },
@@ -23,13 +21,12 @@ const STEPS = [
     key: 'comoApareceu',
     question: 'Como isso tem aparecido na sua vida?',
     options: [
-      'Me sinto confusa',
-      'Me sinto desvalorizada',
-      'Tenho chorado muito',
-      'Tenho dificuldade de decidir',
-      'Tenho medo de me posicionar',
-      'Sinto culpa com frequência',
-      'Estou tentando recomeçar',
+      'Tento ser suficiente para todo mundo',
+      'Repito relações parecidas',
+      'Carrego culpas difíceis de explicar',
+      'Perdi alguém ou algo importante',
+      'Não sei por onde começar',
+      'Sinto que estou apenas sobrevivendo',
     ],
   },
   {
@@ -45,16 +42,6 @@ const STEPS = [
       'Sim, estou em pausa',
       'Não, seria minha primeira vez',
       'Prefiro falar sobre isso depois',
-    ],
-  },
-  {
-    key: 'busca',
-    question: 'Você busca atendimento para você ou para entender algo envolvendo sua família/relação?',
-    options: [
-      'Para mim',
-      'Para meu relacionamento',
-      'Para minha família',
-      'Ainda não sei',
     ],
   },
   {
@@ -77,7 +64,6 @@ export default function RecantoModal({ isOpen, onClose, onComplete }) {
     comoApareceu: null,
     intensidade: null,
     terapiaAntes: null,
-    busca: null,
     formato: null,
   });
   const [showReview, setShowReview] = useState(false);
@@ -89,7 +75,6 @@ export default function RecantoModal({ isOpen, onClose, onComplete }) {
       comoApareceu: null,
       intensidade: null,
       terapiaAntes: null,
-      busca: null,
       formato: null,
     });
     setShowReview(false);
@@ -119,7 +104,7 @@ export default function RecantoModal({ isOpen, onClose, onComplete }) {
   const buildSummary = () => {
     const tema = answers.tema || 'não definido';
     const nivel = answers.intensidade ? `${answers.intensidade} — ${INTENSITY_LABELS[answers.intensidade - 1]}` : 'não definida';
-    return `Pelo que você compartilhou, o tema principal parece ser ${tema}, com intensidade ${nivel}. A Ana pode te orientar melhor em uma conversa inicial.`;
+    return `Pelo que você compartilhou, ${tema} pode ser uma porta de entrada para a conversa, com intensidade ${nivel}. Este resumo não é um diagnóstico; ele apenas ajuda a iniciar o contato com mais contexto.`;
   };
 
   const canProceed = () => {
@@ -187,13 +172,13 @@ export default function RecantoModal({ isOpen, onClose, onComplete }) {
                   >
                     <OfficialLogo className="mb-8 w-[220px]" />
                     <p className="font-heading italic text-xl text-background/70 leading-relaxed">
-                      Antes de te direcionar, quero entender um pouco do seu momento. Você pode responder no seu tempo.
+                      Antes de qualquer direção, existe uma escuta. Você pode compartilhar um pouco do seu momento, no seu tempo.
                     </p>
                     <button
                       onClick={() => setStep(1)}
                       className="mt-10 inline-flex items-center gap-2 px-8 py-3.5 bg-primary/10 border border-primary/30 text-primary text-sm tracking-wide transition-all duration-300 hover:bg-primary/20 hover:border-primary/50"
                     >
-                      Começar
+                      Responder com calma
                       <ArrowRight className="h-4 w-4" />
                     </button>
                   </motion.div>
@@ -397,7 +382,7 @@ export default function RecantoModal({ isOpen, onClose, onComplete }) {
                             : 'bg-primary/90 text-foreground hover:bg-primary'
                         }`}
                       >
-                        Enviar para a Ana
+                        Conversar com a Ana pelo WhatsApp
                         <ArrowRight className="h-4 w-4" />
                       </a>
                       <div className="flex gap-3">
