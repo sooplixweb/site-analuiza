@@ -26,13 +26,21 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className={`relative flex items-center justify-between transition-all duration-500 ${scrolled ? 'h-16' : 'h-[72px]'}`}>
           {/* Logo */}
-          <a href="#inicio" className="group flex items-center" aria-label="Âmagus Lapidar - Ana Luiza Rigueira">
+          <a
+            href="#inicio"
+            className={`group flex items-center transition-all duration-500 ${
+              scrolled
+                ? 'static translate-x-0'
+                : 'absolute left-[calc(50%+3px)] w-[190px] -translate-x-1/2 justify-center lg:static lg:w-auto lg:translate-x-0'
+            }`}
+            aria-label="Âmagus Lapidar - Ana Luiza Rigueira"
+          >
             <OfficialLogo
               loading="eager"
               className={`transition-all duration-500 group-hover:opacity-80 ${
                 scrolled
                   ? 'w-[150px] opacity-100 sm:w-[174px] lg:w-[190px]'
-                  : 'w-[150px] opacity-0 sm:w-[174px] lg:w-[190px]'
+                  : 'w-[172px] opacity-100 sm:w-[190px] lg:w-[190px] lg:opacity-0'
               }`}
             />
           </a>

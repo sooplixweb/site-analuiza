@@ -12,7 +12,7 @@ export default function OfficialLogo({
       loading={loading}
       decoding="async"
       draggable="false"
-      className={`block h-auto w-auto select-none ${className}`}
+      className={`block h-auto select-none ${className}`}
     />
   );
 }

@@ -11,7 +11,7 @@ const CREDENTIALS = [
 
 export default function Story() {
   return (
-    <section id="historia" className="amagus-pattern-light relative py-16 lg:py-24">
+    <section id="historia" className="amagus-pattern-light relative py-14 lg:py-20">
       <div className="mx-auto max-w-5xl px-6 lg:px-12">
         <SectionReveal>
           <span className="font-body text-xs tracking-[0.3em] uppercase text-primary">
@@ -26,9 +26,14 @@ export default function Story() {
         </SectionReveal>
 
         <SectionReveal delay={0.2}>
-          <p className="mt-8 max-w-2xl text-base leading-relaxed text-foreground/70">
-            Há 16 anos, Ana Luiza dedica-se a uma psicologia ética, acessível e profundamente humana — sustentada por uma formação contínua em áreas que envolvem relações, trauma, saúde mental e família.
-          </p>
+          <div className="mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-foreground/70">
+            <p>
+              Acredito que cuidar de pessoas exige estudo permanente.
+            </p>
+            <p>
+              Por isso, minha formação continua sendo construída todos os anos, integrando conhecimento científico, experiência clínica e prática diária.
+            </p>
+          </div>
         </SectionReveal>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-14">

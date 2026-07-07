@@ -9,7 +9,7 @@ const MONTHS_PT_LOWER = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'jun
 const WEEKDAYS_PT_LOWER = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
 
 const TIME_SLOTS = ['08:00', '09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'];
-const SESSION_PRICE = 'R$ 200,00';
+const SESSION_PRICE = 'Informado no contato inicial';
 const PIX_CODE = '00020126580014BR.GOV.BCB.PIX0136amagus-lapidar-agendamento5204000053039865802BR5913ANALUIZARIGUEIRA6009SAOPAULO62070503***6304A1B2C3';
 
 function seededRandom(seed) {
@@ -312,7 +312,7 @@ export default function ScheduleModal({ isOpen, onClose }) {
 
                     {/* Price */}
                     <div className="mb-6 text-center">
-                      <p className="text-xs uppercase tracking-wide text-foreground/40">Taxa de agendamento</p>
+                      <p className="text-xs uppercase tracking-wide text-foreground/40">Informações do atendimento</p>
                       <p className="mt-1 font-display text-3xl text-foreground">{SESSION_PRICE}</p>
                     </div>
 

@@ -30,7 +30,7 @@ export function whatsappLink(message) {
   return `https://wa.me/${AMAGUS.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
-export const DEFAULT_WHATSAPP_MESSAGE = 'Olá, Ana. Cheguei pelo site e senti que talvez este seja o lugar para recomeçar a me escutar. Gostaria de conversar sobre os próximos passos.';
+export const DEFAULT_WHATSAPP_MESSAGE = 'Olá, Ana. Cheguei pelo site e senti que alguma parte da minha história talvez esteja pedindo espaço para ser escutada. Gostaria de conversar com você pelo WhatsApp.';
 
 export function formatRecantoWhatsAppMessage(answers) {
   const intensity = answers.intensidade
@@ -43,8 +43,7 @@ Tema: ${answers.tema || '—'}
 Como aparece: ${answers.comoApareceu || '—'}
 Intensidade: ${intensity}
 Terapia anterior: ${answers.terapiaAntes || '—'}
-Busca: ${answers.busca || '—'}
 Formato: ${answers.formato || '—'}
 
-Gostaria de entender os próximos passos.`;
+Gostaria de conversar com a Ana pelo WhatsApp.`;
 }

@@ -1,16 +1,17 @@
 import { AMAGUS } from '@/lib/amagusConfig';
 import SectionReveal from './SectionReveal';
+import AmagusLogo from './AmagusLogo';
 
 const POINTS = [
-  'Escuta acolhedora',
-  'Experiência clínica',
-  'Cuidado ético',
-  'Olhar humanizado',
+  'Ciência',
+  'Ética',
+  'Presença',
+  'História',
 ];
 
 export default function About() {
   return (
-    <section id="quem-sou" className="amagus-pattern-light relative py-16 lg:py-24">
+    <section id="quem-sou" className="amagus-pattern-light relative py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Image — asymmetric placement */}
@@ -39,30 +40,55 @@ export default function About() {
 
             <SectionReveal delay={0.1}>
               <h2 className="mt-4 font-display text-4xl leading-tight text-foreground sm:text-5xl">
-                Uma presença que acolhe<br />histórias e recomeços.
+                Sou Ana Luiza.
               </h2>
             </SectionReveal>
 
             <SectionReveal delay={0.2}>
               <div className="mt-8 space-y-5 text-base leading-relaxed text-foreground/70">
                 <p>
-                  Sou Ana Luiza, psicóloga há 16 anos. Meu trabalho é acolher histórias, dores, conflitos e recomeços com ética, escuta qualificada e presença.
+                  Há 16 anos acompanho mulheres em momentos em que a vida parece ter perdido o rumo.
                 </p>
                 <p>
-                  Atendo mulheres que desejam compreender seus padrões afetivos, fortalecer sua autoestima e construir relações mais saudáveis.
+                  Ao longo desses anos percebi que, por trás da ansiedade, dos conflitos nos relacionamentos, do luto, da culpa ou da baixa autoestima, quase sempre existe uma história que ainda não pôde ser contada com segurança.
+                </p>
+                <p>
+                  Meu trabalho não é dizer o que você deve fazer.
+                </p>
+                <p>
+                  É ajudar você a compreender por que sente o que sente, reconhecer padrões construídos ao longo da vida e encontrar caminhos mais conscientes para viver suas relações consigo mesma e com o mundo.
+                </p>
+                <p>
+                  Acredito numa psicologia profundamente humana, baseada em ciência, ética e presença.
                 </p>
               </div>
             </SectionReveal>
 
-            {/* Discrete points — not cards */}
             <SectionReveal delay={0.3}>
-              <div className="mt-10 grid grid-cols-2 gap-y-5 border-t border-primary/15 pt-8">
-                {POINTS.map((point) => (
-                  <div key={point} className="flex items-center gap-3">
-                    <span className="h-1.5 w-1.5 rotate-45 bg-primary" />
-                    <span className="font-heading text-lg text-foreground/80">{point}</span>
+              <div className="mt-10 border-t border-primary/15 pt-9">
+                <div className="relative mx-auto h-[250px] w-[250px] sm:h-[280px] sm:w-[280px]">
+                  <div className="absolute inset-5 rounded-full border border-primary/15" />
+                  <div className="absolute inset-12 rounded-full border border-primary/10" />
+
+                  <div className="absolute left-1/2 top-1/2 z-10 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-primary/25 bg-background/70 text-primary shadow-[0_18px_45px_rgba(46,40,36,0.08)] backdrop-blur-sm">
+                    <AmagusLogo className="h-14 w-14 animate-amagus-orbit-center" />
                   </div>
-                ))}
+
+                  <div className="amagus-orbit absolute inset-0">
+                    {POINTS.map((point, index) => (
+                      <span
+                        key={point}
+                        className="amagus-orbit-item absolute left-1/2 top-1/2 inline-flex -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-primary/20 bg-background/85 px-4 py-2 font-heading text-sm text-foreground/80 shadow-[0_12px_30px_rgba(46,40,36,0.08)] backdrop-blur-sm"
+                        style={{
+                          '--angle': `${index * 90}deg`,
+                          '--radius': '104px',
+                        }}
+                      >
+                        {point}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </SectionReveal>
           </div>
