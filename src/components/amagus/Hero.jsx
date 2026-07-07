@@ -16,7 +16,7 @@ export default function Hero({ onRecanto }) {
   const overlayY = useTransform(scrollY, [0, 600], [0, -24]);
 
   return (
-    <section id="inicio" className="amagus-hero-gradient relative flex min-h-screen items-center overflow-hidden pt-24 pb-12 md:pt-20 lg:pt-0 lg:pb-0">
+    <section id="inicio" className="amagus-hero-gradient relative flex min-h-screen items-start overflow-hidden pt-24 pb-16 md:pt-24 lg:items-center lg:pt-48 lg:pb-24">
       {/* Decorative geometric elements */}
       <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-[0.04]">
         <svg viewBox="0 0 400 800" fill="none" className="h-full w-full">
@@ -27,14 +27,14 @@ export default function Hero({ onRecanto }) {
       </div>
 
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-12">
-        <div className="grid items-center gap-9 md:grid-cols-12 md:gap-7 lg:gap-8">
+        <div className="grid items-start gap-9 lg:grid-cols-12 lg:items-center lg:gap-8">
           {/* Text content */}
-          <div className="order-1 md:col-span-6 lg:col-span-5">
+          <div className="order-1 lg:col-span-5">
             <SectionReveal>
-              <div className="mb-7 md:mb-8 lg:mb-9">
+              <div className="mb-7 md:mb-8 lg:hidden">
                 <OfficialLogo
                   loading="eager"
-                  className="hero-official-logo mx-auto w-[min(82vw,390px)] sm:w-[420px] md:mx-0 md:w-[340px] lg:w-[500px]"
+                  className="hero-official-logo mx-auto w-[min(82vw,390px)] sm:w-[420px] md:w-[460px]"
                 />
                 <div className="animate-subtle-divider mx-auto mt-5 flex w-full max-w-[170px] items-center justify-center gap-4 sm:max-w-[190px]">
                   <span className="h-px w-16 bg-primary/35" />
@@ -93,7 +93,7 @@ export default function Hero({ onRecanto }) {
           </div>
 
           {/* Portrait */}
-          <div className="order-2 md:col-span-6 lg:col-span-7">
+          <div className="order-2 lg:col-span-7">
             <SectionReveal delay={0.15} y={60}>
               <div className="relative mx-auto w-full max-w-[560px] md:max-w-none">
                 <motion.div style={{ scale }} className="relative overflow-hidden">

@@ -22,16 +22,24 @@ export default function Header() {
       'bg-background/90 backdrop-blur-md border-b border-primary/10' :
       'bg-transparent'}`
       }>
-      
+
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className={`relative flex items-center justify-between transition-all duration-500 ${scrolled ? 'h-16' : 'h-[72px]'}`}>
-          {/* Logo */}
+        <div
+          className={`relative flex items-center justify-between transition-all duration-500 ${
+            scrolled
+              ? 'h-16'
+              : 'h-[72px] lg:h-auto lg:flex-col lg:justify-center lg:gap-3 lg:py-5'
+          }`}
+        >
+          {/* Logo — single instance:
+              - expanded (top): hidden on mobile (Hero shows the logo), centered & large on desktop
+              - scrolled: compact, left-aligned, on every breakpoint */}
           <a
             href="#inicio"
-            className={`group flex items-center transition-all duration-500 ${
+            className={`group items-center transition-all duration-500 ${
               scrolled
-                ? 'static translate-x-0'
-                : 'absolute left-[calc(50%+3px)] w-[190px] -translate-x-1/2 justify-center lg:static lg:w-auto lg:translate-x-0'
+                ? 'flex static translate-x-0'
+                : 'hidden lg:flex lg:static lg:w-auto lg:translate-x-0 lg:justify-center'
             }`}
             aria-label="Âmagus Lapidar - Ana Luiza Rigueira"
           >
@@ -40,49 +48,32 @@ export default function Header() {
               className={`transition-all duration-500 group-hover:opacity-80 ${
                 scrolled
                   ? 'w-[150px] opacity-100 sm:w-[174px] lg:w-[190px]'
-                  : 'w-[172px] opacity-100 sm:w-[190px] lg:w-[190px] lg:opacity-0'
+                  : 'w-[480px] opacity-100 brightness-[.72] lg:w-[480px]'
               }`}
             />
           </a>
 
-          {/* Desktop nav */}
-          <nav
-            className={`hidden items-center gap-8 transition-all duration-500 lg:flex ${
-              scrolled
-                ? 'static translate-x-0'
-                : 'absolute left-1/2 -translate-x-1/2'
-            }`}
-          >
+          {/* Desktop nav — inline (right) when scrolled, centered below the logo when expanded */}
+          <nav className="static hidden items-center gap-8 transition-all duration-500 lg:flex">
             {AMAGUS.navItems.map((item) =>
             <a
               key={item.href}
               href={item.href}
               className="group relative font-body text-sm text-foreground/70 transition-colors duration-300 hover:text-foreground">
-              
+
                 {item.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             )}
           </nav>
 
-          {/* Desktop CTA with Online/Offline status */}
-          
-
-
-
-
-
-
-
-          
-
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-foreground p-2"
+            className="lg:hidden text-foreground p-2 -ml-2"
             aria-label="Abrir menu">
-            
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
@@ -97,7 +88,7 @@ export default function Header() {
             href={item.href}
             onClick={() => setMobileOpen(false)}
             className="font-body text-sm text-foreground/80 transition-colors hover:text-primary">
-            
+
                 {item.label}
               </a>
           )}
@@ -107,7 +98,7 @@ export default function Header() {
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
             className="inline-flex items-center gap-2.5 justify-center px-6 py-3 bg-foreground text-background text-xs tracking-[0.15em] uppercase mt-2">
-            
+
               <OnlineStatus />
               Conversar com a Ana
             </a>
