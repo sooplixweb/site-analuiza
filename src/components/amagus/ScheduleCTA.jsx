@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, Compass, X } from 'lucide-react';
 import { whatsappLink, DEFAULT_WHATSAPP_MESSAGE, formatRecantoWhatsAppMessage } from '@/lib/amagusConfig';
 import SectionReveal from './SectionReveal';
-import AmagusLogo from './AmagusLogo';
 
 export default function ScheduleCTA({ onRecanto, recantoAnswers }) {
   const [showConfirm, setShowConfirm] = useState(false);
@@ -20,13 +19,15 @@ export default function ScheduleCTA({ onRecanto, recantoAnswers }) {
 
   return (
     <section id="contato" className="amagus-pattern-dark relative flex min-h-[60vh] items-center py-16 lg:py-24">
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.03]">
-        <AmagusLogo className="h-[420px] w-[420px] text-background" showInner={false} />
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.06]">
+        <div className="h-[360px] w-[360px] rotate-45 border border-background/40" />
       </div>
 
       <div className="relative mx-auto max-w-3xl px-6 text-center lg:px-12">
         <SectionReveal>
-          <AmagusLogo className="mx-auto h-10 w-10 text-primary mb-10" showInner={false} />
+          <span className="mb-10 block font-body text-xs uppercase tracking-[0.3em] text-primary/60">
+            Contato
+          </span>
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
@@ -77,7 +78,7 @@ export default function ScheduleCTA({ onRecanto, recantoAnswers }) {
                 <X className="h-4 w-4" />
               </button>
               <p className="pr-6 font-heading text-base leading-relaxed text-background/80">
-                Você já respondeu o Recanto Âmagus. Deseja enviar o resultado junto com sua mensagem?
+                Você já respondeu o Recanto. Deseja enviar o resultado junto com sua mensagem?
               </p>
               <div className="mt-5 flex flex-col gap-2 sm:flex-row">
                 <button

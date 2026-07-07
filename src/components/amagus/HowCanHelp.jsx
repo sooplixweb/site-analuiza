@@ -1,5 +1,4 @@
 import SectionReveal from './SectionReveal';
-import AmagusLogo from './AmagusLogo';
 
 const PHRASES = [
   'Sinto que não sou valorizada.',
@@ -16,7 +15,9 @@ export default function HowCanHelp() {
     <section id="como-posso-ajudar" className="amagus-pattern-dark relative py-16 lg:py-24">
       <div className="mx-auto max-w-5xl px-6 lg:px-12">
         <SectionReveal>
-          <AmagusLogo className="h-8 w-8 text-primary mb-10" showInner={false} />
+          <span className="mb-10 block font-body text-xs uppercase tracking-[0.3em] text-primary/60">
+            Como posso ajudar
+          </span>
           <h2 className="font-display text-3xl leading-tight text-background sm:text-4xl lg:text-5xl">
             Talvez você tenha chegado aqui<br className="hidden sm:block" /> porque algo dentro de você<br className="hidden sm:block" /> pede cuidado.
           </h2>

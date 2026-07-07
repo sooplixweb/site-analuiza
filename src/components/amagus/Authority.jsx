@@ -1,5 +1,4 @@
 import SectionReveal from './SectionReveal';
-import AmagusLogo from './AmagusLogo';
 
 const PROOFS = [
   '16 anos de atuação',
@@ -14,7 +13,9 @@ export default function Authority() {
     <section id="autoridade" className="amagus-pattern-dark relative py-16 lg:py-24">
       <div className="mx-auto max-w-4xl px-6 lg:px-12">
         <SectionReveal>
-          <AmagusLogo className="h-8 w-8 text-primary mb-10" showInner={false} />
+          <span className="mb-10 block font-body text-xs uppercase tracking-[0.3em] text-primary/60">
+            Experiência clínica
+          </span>
           <h2 className="font-display text-3xl leading-tight text-background sm:text-4xl lg:text-5xl">
             Uma trajetória construída<br className="hidden sm:block" /> com escuta e responsabilidade
           </h2>

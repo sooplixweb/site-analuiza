@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Check, Copy, Calendar, Clock, ArrowRight, ArrowLeft, Loader2 } from 'lucide-react';
-import AmagusLogo from './AmagusLogo';
+import OfficialLogo from './OfficialLogo';
 
 const MONTHS_PT = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 const WEEKDAYS_PT = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
@@ -169,7 +169,7 @@ export default function ScheduleModal({ isOpen, onClose }) {
             {/* Header */}
             <div className="flex items-center justify-between border-b border-primary/10 px-6 py-4">
               <div className="flex items-center gap-3">
-                <AmagusLogo className="h-5 w-5 text-primary" showInner={false} />
+                <OfficialLogo className="w-[126px]" />
                 <span className="font-display text-base text-foreground tracking-wide">
                   {step === 'calendar' && 'Agendar horário'}
                   {step === 'pix' && 'Garantir sua vaga'}

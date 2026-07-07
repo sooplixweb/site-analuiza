@@ -1,19 +1,20 @@
 import { ArrowRight, Instagram } from 'lucide-react';
 import { AMAGUS, whatsappLink, DEFAULT_WHATSAPP_MESSAGE } from '@/lib/amagusConfig';
 import SectionReveal from './SectionReveal';
-import AmagusLogo from './AmagusLogo';
 
 export default function Closing() {
   return (
     <section id="fechamento" className="amagus-pattern-dark relative flex min-h-[80vh] items-center py-24 lg:py-40">
       {/* Decorative geometry */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.03]">
-        <AmagusLogo className="h-[500px] w-[500px] text-background" showInner={false} />
+        <div className="h-[440px] w-[440px] rotate-45 border border-background/50" />
       </div>
 
       <div className="relative mx-auto max-w-3xl px-6 text-center lg:px-12">
         <SectionReveal>
-          <AmagusLogo className="mx-auto h-10 w-10 text-primary mb-12" />
+          <span className="mb-12 block font-body text-xs uppercase tracking-[0.3em] text-primary/60">
+            Próximo passo
+          </span>
         </SectionReveal>
 
         <SectionReveal delay={0.1}>

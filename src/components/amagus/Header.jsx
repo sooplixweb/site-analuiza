@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { AMAGUS, whatsappLink, DEFAULT_WHATSAPP_MESSAGE } from '@/lib/amagusConfig';
-import AmagusLogo from './AmagusLogo';
 import OnlineStatus from './OnlineStatus';
+import OfficialLogo from './OfficialLogo';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,18 +24,27 @@ export default function Header() {
       }>
       
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="flex h-[72px] items-center justify-between">
-          {/* Logo + name */}
-          <a href="#inicio" className="group flex items-center gap-3">
-            <AmagusLogo className="h-7 w-7 text-primary transition-transform duration-500 group-hover:rotate-90" showInner={false} />
-            <div className="flex flex-col leading-none">
-              <span className="font-display text-lg text-foreground tracking-wide">Âmagus Lapidar</span>
-              <span className="font-body text-[10px] tracking-[0.2em] uppercase text-primary/70">Ana Luiza Rigueira</span>
-            </div>
+        <div className={`relative flex items-center justify-between transition-all duration-500 ${scrolled ? 'h-16' : 'h-[72px]'}`}>
+          {/* Logo */}
+          <a href="#inicio" className="group flex items-center" aria-label="Âmagus Lapidar - Ana Luiza Rigueira">
+            <OfficialLogo
+              loading="eager"
+              className={`transition-all duration-500 group-hover:opacity-80 ${
+                scrolled
+                  ? 'w-[150px] opacity-100 sm:w-[174px] lg:w-[190px]'
+                  : 'w-[150px] opacity-0 sm:w-[174px] lg:w-[190px]'
+              }`}
+            />
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav
+            className={`hidden items-center gap-8 transition-all duration-500 lg:flex ${
+              scrolled
+                ? 'static translate-x-0'
+                : 'absolute left-1/2 -translate-x-1/2'
+            }`}
+          >
             {AMAGUS.navItems.map((item) =>
             <a
               key={item.href}

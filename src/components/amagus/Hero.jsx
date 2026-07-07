@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { AMAGUS } from '@/lib/amagusConfig';
 import SectionReveal from './SectionReveal';
-import AmagusLogo from './AmagusLogo';
+import OfficialLogo from './OfficialLogo';
 
 const BADGES = [
   '16 anos de experiência',
@@ -29,33 +29,30 @@ export default function Hero({ onRecanto }) {
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-12">
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
           {/* Text content */}
-          <div className="order-2 lg:order-1 lg:col-span-5">
+          <div className="order-1 lg:col-span-5">
             <SectionReveal>
-              <div className="mb-6 flex items-center gap-3">
-                <AmagusLogo className="h-6 w-6 text-primary" showInner={false} spin />
-                <span className="font-body text-xs tracking-[0.3em] uppercase text-primary">
-                  Âmagus Lapidar
-                </span>
+              <div className="mb-9">
+                <OfficialLogo
+                  loading="eager"
+                  className="hero-official-logo w-[min(90vw,430px)] sm:w-[470px] lg:w-[500px]"
+                />
+                <div className="animate-subtle-divider mx-auto mt-5 flex w-full max-w-[170px] items-center justify-center gap-4 sm:max-w-[190px]">
+                  <span className="h-px w-16 bg-primary/35" />
+                  <span className="h-1.5 w-1.5 rotate-45 bg-primary" />
+                  <span className="h-px w-10 bg-primary/20" />
+                </div>
               </div>
             </SectionReveal>
 
             <SectionReveal delay={0.1}>
-              <h1 className="font-display text-foreground">
-                <span className="block font-heading italic text-xl tracking-wide text-primary/70 sm:text-2xl">
-                  Psicóloga
-                </span>
-                <span className="mt-2 block text-5xl leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-                  Ana Luiza
-                </span>
-                <span className="mt-1 block font-heading italic text-2xl text-foreground/35 sm:text-3xl">
-                  Rigueira
-                </span>
+              <h1 className="max-w-xl font-display text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
+                Escuta clínica para mulheres que desejam se reencontrar.
               </h1>
             </SectionReveal>
 
             <SectionReveal delay={0.2}>
               <p className="mt-7 font-heading text-xl leading-relaxed text-primary sm:text-2xl">
-                Bem-vinda ao Âmagus Lapidar, um espaço de escuta, cuidado e reconstrução emocional.
+                Um espaço de cuidado psicológico para reconstruir vínculos, autoestima e presença.
               </p>
             </SectionReveal>
 
@@ -91,7 +88,7 @@ export default function Hero({ onRecanto }) {
           </div>
 
           {/* Portrait */}
-          <div className="order-1 lg:order-2 lg:col-span-7">
+          <div className="order-2 lg:col-span-7">
             <SectionReveal delay={0.15} y={60}>
               <div className="relative">
                 <motion.div style={{ scale }} className="relative overflow-hidden">
@@ -107,10 +104,8 @@ export default function Hero({ onRecanto }) {
                 {/* Floating geometric accent */}
                 <motion.div
                   style={{ y: overlayY }}
-                  className="pointer-events-none absolute -left-4 -top-4 hidden lg:block"
-                >
-                  <AmagusLogo className="h-14 w-14 text-primary/30" showInner={false} />
-                </motion.div>
+                  className="pointer-events-none absolute -left-4 -top-4 hidden h-16 w-16 border-l border-t border-primary/25 lg:block"
+                />
 
                 {/* Bottom accent line */}
                 <div className="absolute -bottom-3 left-0 h-px w-2/3 bg-gradient-to-r from-primary/40 to-transparent" />

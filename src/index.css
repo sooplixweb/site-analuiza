@@ -114,7 +114,12 @@
 @layer utilities {
   .amagus-pattern-light {
     background-color: #F9F5F1;
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 5 L75 40 L40 75 L5 40 Z' fill='none' stroke='%23A68A73' stroke-width='0.4' opacity='0.05'/%3E%3C/svg%3E");
+    background-image:
+      radial-gradient(circle at 50% 38%, rgba(166, 138, 115, 0.28) 0%, rgba(226, 212, 196, 0.22) 34%, rgba(249, 245, 241, 0.98) 68%, #F9F5F1 100%),
+      url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 5 L75 40 L40 75 L5 40 Z' fill='none' stroke='%23A68A73' stroke-width='0.4' opacity='0.05'/%3E%3C/svg%3E");
+    background-position: center top, center;
+    background-repeat: no-repeat, repeat;
+    background-size: min(980px, 120vw) min(980px, 120vw), 80px 80px;
   }
 
   .amagus-pattern-dark {
@@ -141,6 +146,10 @@
   .animate-fade-in {
     animation: fade-in 0.4s ease-out;
   }
+
+  .animate-subtle-divider {
+    animation: subtle-divider 4.8s ease-in-out infinite;
+  }
 }
 
 @keyframes rotate-slow {
@@ -163,6 +172,17 @@
   to { opacity: 1; }
 }
 
+@keyframes subtle-divider {
+  0%, 100% {
+    opacity: 0.42;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+}
+
 @keyframes amagus-windmill {
   0%, 55% { transform: rotate(0deg); }
   58%, 62% { transform: rotate(-16deg); }
@@ -176,6 +196,15 @@
 }
 
 .amagus-hero-gradient {
-  background-color: #F9F5F1;
-  background-image: radial-gradient(ellipse 72% 62% at 50% 40%, #E2D4C4 0%, #EFE7DE 48%, #F9F5F1 78%);
+  background-color: #F4EDE5;
+  background-image:
+    radial-gradient(circle at 50% 36%, rgba(166, 138, 115, 0.46) 0%, rgba(198, 176, 157, 0.34) 36%, rgba(244, 237, 229, 0.96) 68%, #F4EDE5 100%),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 5 L75 40 L40 75 L5 40 Z' fill='none' stroke='%23A68A73' stroke-width='0.4' opacity='0.05'/%3E%3C/svg%3E");
+  background-position: center top, center;
+  background-repeat: no-repeat, repeat;
+  background-size: min(980px, 120vw) min(980px, 120vw), 80px 80px;
+}
+
+.hero-official-logo {
+  filter: brightness(0.78) contrast(1.18) saturate(1.08) drop-shadow(0 10px 18px rgba(46, 40, 36, 0.08));
 }

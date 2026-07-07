@@ -22,7 +22,7 @@ export default function FloatingButton({ onClick }) {
       onClick={onClick}
       style={{ opacity }}
       className="group fixed bottom-6 right-6 z-[100] flex flex-col items-center gap-2"
-      aria-label="Entender meu momento — Recanto Âmagus"
+      aria-label="Entender meu momento"
     >
       {/* Label */}
       <span className="pointer-events-none max-w-0 overflow-hidden whitespace-nowrap text-xs font-body tracking-wide text-primary opacity-0 transition-all duration-500 group-hover:max-w-[160px] group-hover:opacity-100">

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, ArrowLeft, Check } from 'lucide-react';
 import { whatsappLink, formatRecantoWhatsAppMessage, INTENSITY_LABELS } from '@/lib/amagusConfig';
-import AmagusLogo from './AmagusLogo';
+import OfficialLogo from './OfficialLogo';
 
 const STEPS = [
   {
@@ -150,8 +150,7 @@ export default function RecantoModal({ isOpen, onClose, onComplete }) {
             {/* Header bar */}
             <div className="flex items-center justify-between border-b border-primary/10 px-6 py-4">
               <div className="flex items-center gap-3">
-                <AmagusLogo className="h-5 w-5 text-primary" showInner={false} />
-                <span className="font-display text-base text-background tracking-wide">Recanto Âmagus</span>
+                <OfficialLogo className="w-[138px]" />
               </div>
               <button
                 onClick={handleClose}
@@ -186,7 +185,7 @@ export default function RecantoModal({ isOpen, onClose, onComplete }) {
                     transition={{ duration: 0.35 }}
                     className="flex flex-col items-center text-center"
                   >
-                    <AmagusLogo className="h-10 w-10 text-primary mb-8" />
+                    <OfficialLogo className="mb-8 w-[220px]" />
                     <p className="font-heading italic text-xl text-background/70 leading-relaxed">
                       Antes de te direcionar, quero entender um pouco do seu momento. Você pode responder no seu tempo.
                     </p>
@@ -329,7 +328,7 @@ export default function RecantoModal({ isOpen, onClose, onComplete }) {
                     transition={{ duration: 0.35 }}
                   >
                     <div className="flex flex-col items-center text-center mb-6">
-                      <AmagusLogo className="h-8 w-8 text-primary mb-6" showInner={false} />
+                      <OfficialLogo className="mb-6 w-[190px]" />
                       <span className="font-body text-xs tracking-[0.2em] uppercase text-primary/60">
                         Seu resumo
                       </span>

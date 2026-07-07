@@ -20,7 +20,7 @@ export const AMAGUS = {
     { label: 'Início', href: '#inicio' },
     { label: 'Quem sou', href: '#quem-sou' },
     { label: 'Como posso ajudar', href: '#como-posso-ajudar' },
-    { label: 'Âmagus Lapidar', href: '#amagus-lapidar' },
+    { label: 'Processo', href: '#amagus-lapidar' },
     { label: 'História', href: '#historia' },
     { label: 'Contato', href: '#contato' },
   ],
@@ -30,15 +30,15 @@ export function whatsappLink(message) {
   return `https://wa.me/${AMAGUS.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
-export const DEFAULT_WHATSAPP_MESSAGE = 'Olá, Ana. Cheguei até o Âmagus Lapidar e senti que talvez este seja o lugar para recomeçar a me escutar. Gostaria de conversar sobre os próximos passos.';
+export const DEFAULT_WHATSAPP_MESSAGE = 'Olá, Ana. Cheguei pelo site e senti que talvez este seja o lugar para recomeçar a me escutar. Gostaria de conversar sobre os próximos passos.';
 
 export function formatRecantoWhatsAppMessage(answers) {
   const intensity = answers.intensidade
     ? `${answers.intensidade}/5 — ${INTENSITY_LABELS[answers.intensidade - 1]}`
     : '—';
-  return `Olá, Ana. Cheguei até o Âmagus Lapidar e resolvi compartilhar um pouco do meu momento antes de conversarmos.
+  return `Olá, Ana. Cheguei pelo site e resolvi compartilhar um pouco do meu momento antes de conversarmos.
 
-— Recanto Âmagus —
+— Recanto —
 Tema: ${answers.tema || '—'}
 Como aparece: ${answers.comoApareceu || '—'}
 Intensidade: ${intensity}

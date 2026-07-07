@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { AMAGUS } from '@/lib/amagusConfig';
 import SectionReveal from './SectionReveal';
-import AmagusLogo from './AmagusLogo';
 
 export default function Family() {
   const { scrollY } = useScroll();
@@ -31,7 +30,9 @@ export default function Family() {
           {/* Text */}
           <div className="order-1 lg:order-2 lg:col-span-5">
             <SectionReveal>
-              <AmagusLogo className="h-8 w-8 text-primary" showInner={false} />
+              <span className="font-body text-xs uppercase tracking-[0.3em] text-primary">
+                Rede de apoio
+              </span>
             </SectionReveal>
 
             <SectionReveal delay={0.1}>

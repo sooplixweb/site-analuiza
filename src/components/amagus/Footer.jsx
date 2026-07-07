@@ -1,52 +1,68 @@
 import { Instagram, MapPin, MessageCircle } from 'lucide-react';
 import { AMAGUS, whatsappLink, DEFAULT_WHATSAPP_MESSAGE } from '@/lib/amagusConfig';
-import AmagusLogo from './AmagusLogo';
+import OfficialLogo from './OfficialLogo';
+
+const footerLinks = [
+  {
+    label: 'Instagram',
+    value: AMAGUS.instagram,
+    href: AMAGUS.instagramUrl,
+    icon: Instagram,
+  },
+  {
+    label: 'WhatsApp',
+    value: 'Conversar com a Ana',
+    href: whatsappLink(DEFAULT_WHATSAPP_MESSAGE),
+    icon: MessageCircle,
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-primary/10 bg-foreground py-10">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 lg:flex-row lg:items-center lg:justify-between lg:px-12">
-        <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
-          <AmagusLogo className="h-10 w-10 flex-shrink-0 text-primary" showInner={false} />
-          <div>
-            <span className="font-display text-2xl tracking-wide text-background">Âmagus Lapidar</span>
-            <div className="mt-1 flex flex-col gap-1 text-sm text-background/55 sm:flex-row sm:items-center sm:gap-2">
-              <span className="font-display text-base text-background/80">Ana Luiza Rigueira</span>
-              <span className="hidden text-background/25 sm:inline">|</span>
-              <span>Psicóloga · CRP {AMAGUS.crp}</span>
-            </div>
+    <footer className="border-t border-primary/10 bg-foreground px-6 py-14 text-background lg:px-12">
+      <div className="mx-auto flex max-w-6xl flex-col items-center text-center">
+        <OfficialLogo className="w-[260px] sm:w-[320px]" />
+
+        <p className="mt-5 text-sm text-background/55">
+          Psicóloga · CRP {AMAGUS.crp}
+        </p>
+
+        <div className="mt-10 h-px w-full max-w-4xl bg-primary/12" />
+
+        <div className="mt-10 grid w-full max-w-5xl gap-8 md:grid-cols-3 md:gap-10">
+          {footerLinks.map(({ label, value, href, icon: Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex min-h-[118px] flex-col items-center justify-center text-center"
+            >
+              <Icon className="h-5 w-5 text-primary/70 transition-colors group-hover:text-primary" />
+              <span className="mt-4 text-[10px] uppercase tracking-[0.25em] text-background/35">
+                {label}
+              </span>
+              <span className="mt-2 text-sm leading-relaxed text-background/70 transition-colors group-hover:text-primary">
+                {value}
+              </span>
+            </a>
+          ))}
+
+          <div className="flex min-h-[118px] flex-col items-center justify-center text-center">
+            <MapPin className="h-5 w-5 text-primary/70" />
+            <span className="mt-4 text-[10px] uppercase tracking-[0.25em] text-background/35">
+              Consultório
+            </span>
+            <span className="mt-2 max-w-sm text-sm leading-relaxed text-background/60">
+              {AMAGUS.address}
+            </span>
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-4 text-sm text-background/65 md:flex-row md:flex-wrap md:justify-center lg:justify-end">
-          <a
-            href={AMAGUS.instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 transition-colors hover:text-primary"
-          >
-            <Instagram className="h-4 w-4 text-primary/60 transition-colors group-hover:text-primary" />
-            <span>{AMAGUS.instagram}</span>
-          </a>
-          <a
-            href={whatsappLink(DEFAULT_WHATSAPP_MESSAGE)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 transition-colors hover:text-primary"
-          >
-            <MessageCircle className="h-4 w-4 text-primary/60 transition-colors group-hover:text-primary" />
-            <span>WhatsApp</span>
-          </a>
-          <div className="flex max-w-sm items-start gap-3 text-center text-background/50 md:text-left">
-            <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary/60" />
-            <span>{AMAGUS.address}</span>
-          </div>
-        </div>
-      </div>
+        <div className="mt-10 h-px w-full max-w-4xl bg-primary/12" />
 
-      <div className="mx-auto mt-8 max-w-7xl border-t border-primary/10 px-6 pt-6 lg:px-12">
-        <p className="text-center text-[10px] uppercase tracking-[0.2em] text-background/30 lg:text-left">
-          Âmagus Lapidar © {new Date().getFullYear()}
+        <p className="mt-6 text-[10px] uppercase tracking-[0.22em] text-background/28">
+          © {new Date().getFullYear()} Ana Luiza Rigueira
         </p>
       </div>
     </footer>
